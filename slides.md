@@ -3,7 +3,7 @@
 theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: images/cover.png
 # some information about your slides, markdown enabled
 title: Bücher mit Code online publizieren
 info: |
@@ -38,19 +38,27 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+layout: image-right
+image: images/jbgallery.png
+---
 
 # Anwendungsszenarien
 
+#### Mein Anwendungsszenario
 - Manuskript zu einem Programmierkurs frei zugänglich machen
-- Präsentation auf einer responsiven Webseite für Darstellung auf verschiedenen Ausgabegeräten
-- Code wird zum Aufbau der Inhalte der Webseite ausgeführt
+- Präsentation auf einer responsiven Webseite
+- Code wird zum Aufbau der Inhalte der Webseite ausgeführt und die Resultate werden integriert
 
 <br>
 
-<div v-click>
-- xxy 
-- laksjf
-</div>
+<v-click>
+  
+#### Allgemeinere Szenarien
+- allgemeine Lehrmaterialen mit Code zum Erzeugen von Abbildungen
+oder ganz ohne Code
+- wissenschaftliche Arbeiten, z.B. mit Datenanalyse
+  
+</v-click>
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
