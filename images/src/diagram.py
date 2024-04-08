@@ -67,4 +67,4 @@ tbb8 = t8.bbox().enlarged(0.1)
 c.fill(tbb8.path(), [command_color, rounded, deco.stroked([command_color_dark])])
 c.insert(t8)
 
-c.writeGSfile(device='png256', resolution=250)
+c.writeGSfile(device='png16m', resolution=300)
