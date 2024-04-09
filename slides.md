@@ -272,6 +272,7 @@ X0fz999j37YNV/sehxBoQ0IQej0IgaehAWn/MVSFISWFwDPPIGjBAkyDB/fXKfkMd00NLVlZOAsLUZqb
 ---
 
 # CommonMark
+[commonmark.org](http://commonmark.org)
 
 | Variante 1                    | Variante 2                         | Ausgabe                             |
 |:----------------------------- |:---------------------------------- |:----------------------------------- |
@@ -302,3 +303,365 @@ X0fz999j37YNV/sehxBoQ0IQej0IgaehAWn/MVSFISWFwDPPIGjBAkyDB/fXKfkMd00NLVlZOAsLUZqb
 | `[Link](http://a.org)`                                                                       | `[Link][1]`<br>⋮<br>`[1]: http://a.org`                | [Link](http://a.org)            |
 | `![Bild](images/bild.png)`                                                                   | `![Bild][1]`<br>⋮<br>`[1]: images/bild.png`            | ![](images/bild.png)            |
 | <code>\`\`\`</code><br><code>a = 3</code><br><code>print(a**2)</code><br><code>\`\`\`</code> | <code>␣␣␣␣a = 3</code><br><code>␣␣␣␣print(a**2)</code> | <pre>a = 3<br>print(a**2)</pre> |
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+MyST Markdown erweitert CommonMark &nbsp;&nbsp;  [jupyterbook.org/en/stable/content/](https://jupyterbook.org/en/stable/content/)
+
+
+```markdown
+    es kann auch Fälle geben, in denen man selbst programmieren muss, zum Beispiel wenn man eine Exponentialfunktion
+    auf einen Waschbären anwenden möchte ({numref}`fig:exponential_raccoon`).
+    ```{figure} images/einleitung/exponential_raccoon.png
+    ---
+    width: 10cm
+    name: fig:exponential_raccoon
+    ---
+    Originalbild eines Waschbärs (links) und nach Anwendung einer Exponentialfunktion (rechts).
+    ```
+```
+
+<img src="images/raccoon.png" style="width: 60%; margin: auto">
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+```markdown
+    ````{margin}
+    ```{admonition} Tipp
+    :class: tip
+    Eine größere Darstellung von Abbildung können Sie durch Klicken auf das entsprechende Bild erhalten.
+    ```
+    ````
+    
+    Das Beispiel der Digitalkamera schlägt die Brücke vom Alltag ins Labor. Im Grunde genommen ist eine Digitalkamera
+    nichts anderes als ein Messgerät, das
+```
+
+<img src="images/tipp.png" style="width: 80%; margin: auto">
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+```markdown
+    ```{admonition} Frage
+    Was ergibt `-2*4+3**2`? Was ergibt `6**4//2`?
+    ```
+```
+</div>
+<div>
+<img src="images/frage.png" style="width: 60%10 margin: auto">
+</div>
+</div>
+
+<br>
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+```markdown
+    ```{admonition} Hinweis
+    :class: tip
+    Seit Python 3.9 lässt sich die kleinste darstellbare
+    Zahl, also `5e-324` mit Hilfe von `math.ulp(0)`
+    erhalten.
+    ```
+```
+</div>
+<div>
+<img src="images/hinweis.png" style="width: 100%; margin: auto">
+</div>
+</div>
+
+<br>
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+```markdown
+    ````{admonition} Weiterführendes (rechts aufklappen)
+    :class: toggle
+    Nach der Kompilierung des obigen C-Programms entsteht als Zwischenprodukt
+    ein so genanntes Assembler-Programm, das schon sehr maschinennah ist und
+    von einem Assembler in den von einem Computer les- und ausführbaren
+    Maschinencode umgewandelt wird.
+    ```{code-block}
+                .file   "bsp_exp.c"
+                .text
+    ⋮
+```
+</div>
+<div>
+<img src="images/toggle.png" style="width: 100%; margin: auto">
+</div>
+</div>
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+```markdown
+- Python besitzt eine umfangreiche Standardbibliothek (»Python comes with batteries included«) und das
+  wissenschaftliche Rechnen wird durch eine Vielzahl freier Programmbibliotheken, wie {program}`NumPy/SciPy`, das wir
+  im Kapitel {ref}`scipy` besprechen werden, unterstützt.
+- Python hat sich in den letzten Jahren zu einer sehr populären Sprache entwickelt, unter anderem im Bereich der
+  wissenschaftlichen Datenanalyse.
+
+Bei den beiden physikalischen Beobachtungen, die in den letzten Jahren die Aufmerksamkeit einer breiten Öffentlichkeit
+erregten, nämlich die Beobachtung von Gravitationswellen [^prd93] und die Aufnahme des Abbilds eines schwarzen
+⋮
+[^prd93]: B. P. Abbott  et al. , [Phys. Rev. D  93 , 122003 (2016)](https://doi.org/10.1103/PhysRevD.93.122003). Das
+Analysepaket PyCBC basiert auf Python und auch das Analysepaket GstLAL enthält einige Pythonskripte.
+
+```
+
+<img src="images/refs.png" style="width: 70%; margin: auto">
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+```markdown
+Im ersten Beispiel soll der Zusammenhang zwischen der Winkelgeschwindigkeit $\omega$
+und der Beschleunigung $a$ bei einer Rotationsbewegung untersucht werden. Gemäß
+der Mechanik erfährt ein Objekt im Abstand $r$ von der Drehachse die Beschleunigung
+
+$$a = r\omega^2\,.$$
+
+Zur experimentellen Untersuchung wird ein Smartphone wie in
+```
+
+<img src="images/latex.png" style="width: 80%; margin: auto">
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+```markdown
+    ```{code-block} python
+    ---
+    linenos: true
+    emphasize-lines: 18,21-25,29
+    ---
+    import random
+    
+    def get_result(n_self, n_other):
+        result = (n_self - n_other) % 3
+        if result == 0:
+            return 'Das Spiel endete unentschieden.'
+    elif result == 1:
+        return 'Du hast gewonnen.'
+    return 'Du hast leider verloren.'
+
+    objekte = ['Stein', 'Papier', 'Schere']
+    info_text = ('\n[0] Stein\n'
+                 '[1] Papier\n'
+                 '[2] Schere\n\n'
+                 'Gib eine Zahl zwischen 0 und 2 ein oder -1 zum Beenden: ')
+    
+    while True:
+        n_benutzer = int(input(info_text))
+         ⋮
+```
+</div>
+<div>
+<img src="images/linenos.png" style="width: 100%; margin: auto">
+</div>
+</div>
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+```markdown
+    Möchte man aus den Werten zweier Variablen eine komplexe Zahl konstruieren, geht dies mit der zweiten der gerade
+    genannten Methoden sehr einfach
+    ```{code-cell} python
+    x = 1
+    y = 2
+    z1 = complex(x, y)
+    z2 = complex(x, -y)
+    z1/z2
+    ```
+    
+    Falls man die Funktion {func}`complex` nicht verwenden möchte, muss man beachten, dass die folgenden beiden Wege
+```
+
+<img src="images/codeeval.png" style="width: 60%; margin: auto">
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+```markdown
+    ```{code-cell} python
+    ---
+    tags: [raises-exception]
+    ---
+    x = 18
+    y = 9
+    z = x+yj
+    ```
+```
+
+<img src="images/exception.png" style="width: 60%; margin: auto">
+
+---
+
+# MyST Markdown anhand von Beispielen
+
+```markdown
+auch im nächsten Abschnitt noch einmal eine Rolle spielen, wenn wir die Ausgabe von Daten in eine Datei besprechen.
+
+<video width="640" height="360" controls>
+  <source src="https://gertingold.github.io/resources/flush.webm" type="video/webm">
+Ihr Browser unterstützt nicht das video-Tag.
+</video>
+
+(readfile)=
+## Lesen von Dateien
+```
+
+<img src="images/video.png" style="width: 40%; margin: auto">
+
+---
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+_conf.yml
+
+```yaml {all}{maxHeight:'400px'}
+title         : Einführung in Prinzipien der Programmierung
+author        : Gert-Ludwig Ingold
+copyright     : "CC-BY"
+logo          : ""
+
+only_build_toc_files: true
+
+repository:
+  url: https//github.com/gertingold/epriprog
+  path_to_book: epriprog
+
+html:
+  use_repository_button: false
+  use_issues_button: false
+  use_edit_page_button: false
+  home_page_in_navbar: false
+
+latex:
+  latex_documents:
+    targetname: epriprog.tex
+  latex_elements:
+    papersize: a4paper
+
+sphinx: 
+  config: 
+    language: de
+    numfig_format:
+      section: 'Kapitel %s'
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org" 
+```
+</div>
+<div>
+_toc.yml
+
+```yaml
+root: intro
+options:
+  numbered: true
+chapters:
+  - file: einleitung
+  - file: vorschau
+  - file: datentypen
+  - file: kontrollstrukturen
+  - file: funktionen
+  - file: sequenzen
+  - file: einausgabe
+  - file: scipy
+  - file: objektorientiert
+  - file: zahlensysteme
+  - file: floats
+  - file: unicode
+```
+</div>
+</div>
+
+---
+layout: image
+image: images/epriprog.png
+---
+
+---
+
+<div class="grid grid-cols-[1fr_60%] gap-4">
+<div>
+<a href="https://gertingold.github.io/epriprog">gertingold.github.io/epriprog</a>
+</div>
+<div>
+<img src="images/epriprog_pdf_1.png" style="width: 100%; margin: auto">
+
+<br>
+<br>
+
+<img src="images/epriprog_pdf_2.png" style="width: 100%; margin: auto">
+</div>
+</div>
+
+---
+layout: two-cols
+---
+
+## GitHub
+
+[github.org](https://github.org)
+
+## github.io
+
+::right::
+
+## GitHub Actions
+
+```yaml {all|3-6|10|12-13|15-18|20-24|26-28|30-34}{maxHeight:'400px'}
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout merge commit
+      uses: actions/checkout@v4
+
+    - name: set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: install dependencies
+      run: |
+        conda install -y python=3.11
+        conda env update --file environment.yml --name base
+        echo $CONDA/bin >> $GITHUB_PATH
+
+    - name: build the book
+      run: |
+        jupyter-book build epriprog
+
+    - name: deploy book's HTML to gh-pages branch
+      uses: peaceiris/actions-gh-pages@v3.9.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: epriprog/_build/html
+```
