@@ -623,7 +623,14 @@ layout: two-cols
 
 [github.org](https://github.org)
 
+- Plattform für Software-Versionskontrolle und Projektzusammenarbeit
+- freier persönlicher Account
+
 ## github.io
+
+- Webseiten unter *username*.github.io unter Verwendung eines öffentlichen GitHub-Repositories mit diesem Namen
+- statische Webseiten, also z.B. keine PHP-Skripten
+- Beschränkung der Seitengröße und Bandbreite, nicht für kommerziellen Gebrauch
 
 ::right::
 
