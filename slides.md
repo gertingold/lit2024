@@ -356,7 +356,7 @@ MyST Markdown erweitert CommonMark &nbsp;&nbsp;  [jupyterbook.org/en/stable/cont
 ```
 </div>
 <div>
-<img src="images/frage.png" style="width: 60%10 margin: auto">
+<img src="images/frage.png" style="width: 60%; margin: auto">
 </div>
 </div>
 
@@ -616,8 +616,6 @@ image: images/epriprog.png
 </div>
 
 ---
-layout: two-cols
----
 
 ## GitHub
 
@@ -628,15 +626,27 @@ layout: two-cols
 
 ## github.io
 
-- Webseiten unter *username*.github.io unter Verwendung eines öffentlichen GitHub-Repositories mit diesem Namen
+- Webseiten unter *username*.github.io unter Verwendung eines öffentlichen GitHub-Repositories
+  mit diesem Namen
+- Erzeugung des Inhalts aus anderen GitHub-Repositories mit Hilfe von GitHub-Actions in einem
+  Zweig `gh-pages`
+
+<br>
+
 - statische Webseiten, also z.B. keine PHP-Skripten
 - Beschränkung der Seitengröße und Bandbreite, nicht für kommerziellen Gebrauch
 
-::right::
+---
+layout: gli-two-cols-header
+---
 
 ## GitHub Actions
 
-```yaml {all|3-6|10|12-13|15-18|20-24|26-28|30-34}{maxHeight:'400px'}
+::left::
+
+#### `.github/workflows/deploy.yml`
+
+```yaml {all|3-6|10|12-13|15-18|20-24|26-28|30-34}{maxHeight:'350px'}
 name: deploy
 
 on:
@@ -672,3 +682,211 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: epriprog/_build/html
 ```
+
+::right::
+
+<v-click at="5">
+
+#### `environment.yml`
+
+</v-click>
+
+```yaml {hide|all|9|all}{at:5}
+name: epriprog
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python==3.11
+  - scipy
+  - matplotlib
+  - jupyter-book
+```
+
+---
+
+# mystmd
+
+[mystmd.org](https://mystmd.org/)
+
+* neben Jupyter Book zweites (und jüngeres) Hauptprojekt von [executable\{books\}](https://executablebooks.org/en/latest/)
+* Javascript statt Python, schneller und mehr Funktionalität
+* Überlapp mit Jupyter Book
+  - Jupyter Book Quellen verwendbar
+  - Intersphinx für Verlinkung mit Sphinx-Dokumentationen
+* vor allem [Templates](https://github.com/myst-templates) für Journale
+  (derzeit 2 `docx`, 18 `tex`, 2 `typst`) sowie 2 Templates für Webseiten (article und book)
+* Möglichkeit für interaktive Inhalte
+
+<br>
+
+* Lokalisierung??
+
+---
+
+# Ein paar Eindrücke von `mystmd`
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+<img src="images/wiki.png" style="width: 100% margin: auto">
+</div>
+<div>
+```markdown
+Dies ist ein MyST-Beispiel für den LinuxInfoTag 2024, in
+dem es allgemein um <wiki:Linux> geht.
+```
+</div>
+
+<br>
+<br>
+
+Beispielcode, siehe  
+[github.com/gertingold/lit2024/tree/main/myst-example](https://github.com/gertingold/lit2024/tree/main/myst-example)
+</div>
+
+---
+
+# Ein paar Eindrücke von `mystmd`
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+<img src="images/exponential-raccoon.png" style="width: 100%; margin: auto">
+
+<br>
+
+<img src="images/exp-raccoon-caption.png" style="width: 60%; margin: auto">
+</div>
+<div>
+```markdown
+Beim LinuxInfoTag 2017 habe ich ein
+[Bild](#exponential_raccoon) gezeigt. Man kann auf das
+Bild auch mit seiner Nummer verweisen:
+[Abb. %s](#exponential_raccoon), aber in der
+Bildüberschrift steht trotzdem "Figure 1".
+```
+</div>
+</div>
+
+---
+
+# Ein paar Eindrücke von `mystmd`
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+<img src="images/equation.png" style="width: 100%; margin: auto">
+</div>
+<div>
+
+#### `01-einleitung.md`
+```markdown
+Im Hauptteil steht eine berühmte [Gleichung](#einstein),
+die die Gleichungsnummer {numref}`einstein` besitzt.
+```
+</div>
+</div>
+
+<br>
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+<img src="images/equation_main.png" style="width: 100%; margin: auto">
+</div>
+<div>
+
+#### `02-hauptteil.md`
+````markdown
+Dies ist eine Gleichung:
+```{math}
+:label: einstein
+E = mc^2
+```
+````
+</div>
+</div>
+
+---
+
+# Ein paar Eindrücke von `mystmd`
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+<img src="images/doi.png" style="width: 100%; margin: auto">
+</div>
+<div>
+
+```markdown
+Hier wurde die erste Beobachtung von Gravitationswellen
+publiziert: @doi:10.1103/PhysRevD.93.122003
+```
+</div>
+</div>
+
+<br>
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+<img src="images/doi_ref.png" style="width: 100%; margin: auto">
+</div>
+<div>
+
+* Am Ende wird automatisch eine Referenzenliste erzeugt.
+
+</div>
+</div>
+
+---
+
+# Ein paar Eindrücke von `mystmd`
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+<img src="images/mermaid.png" style="width: 100%; margin: auto">
+</div>
+<div>
+
+````markdown
+Intersphinx-Link zu einer Seite der Jupyter Book
+Dokumentation: [](myst:jupyterbook#publish/gh-pages)
+
+Dieses Diagramm ist mit mermaid erstellt und stammt aus
+der MyST-Dokumentation:
+
+```{mermaid}
+flowchart LR
+  A[Jupyter Notebook] --> C
+  B[MyST Markdown] --> C
+  C(mystmd) --> D{AST}
+  D <--> E[LaTeX]
+  E --> F[PDF]
+  D --> G[Word]
+  D --> H[React]
+  D --> I[HTML]
+  D <--> J[JATS]
+```
+````
+
+</div>
+</div>
+
+---
+
+# Nützliche Links
+
+* Executable Book Project: [executablebooks.org](https://executablebooks.org)
+* Jupyter Book: [jupyterbook.org](https://jupyterbook.org)
+* MyST: [mystmd.org](https://mystmd.org)
+
+<br>
+
+* Quellen zu diesem Vortrag: [github.com/gertingold/lit2024](https://github.com/gertingold/lit2024.git)
+
+<br>
+
+* Beispiel mit Jupyter Book: [github.com/gertingold/epriprog](https://github.com/gertingold/epriprog.git)
+* Beispiel mit Sphinx: [github.com/gertingold/tools4scicomp](https://github.com/gertingold/tools4scicomp.git)
+
+<br>
+<br>
+<br>
+
+<h1 style="text-align:center;">Fragen?</h1>
